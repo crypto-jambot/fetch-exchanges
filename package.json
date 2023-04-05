@@ -1,6 +1,6 @@
 {
   "name": "fetch-exchanges",
-  "version": "1.0.0-0",
+  "version": "1.0.0",
   "description": "Service to get exchanges for pool ingestor",
   "main": "index.js",
   "scripts": {
