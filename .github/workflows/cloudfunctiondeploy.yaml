@@ -55,7 +55,7 @@ jobs:
       - name: Deploy Cloud Function
         uses: google-github-actions/deploy-cloud-functions@v1
         with:
-          name: ${{ secrets.FUNCTION_NAME }}-$VERSION
+          name: ${{ secrets.FUNCTION_NAME }}
           runtime: nodejs16
           entry_point: getExchanges
           env_vars_file: deployment-config/variables.yaml
