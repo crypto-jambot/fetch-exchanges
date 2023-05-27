@@ -19,6 +19,7 @@ type FilteredExchange = {
     exchangeName: string;
     numberOfBlocks: number;
     rpcBlockBatchSize: number;
+    table: string;
 };
 
 export async function getExchanges(req: Request, res: Response) {
@@ -40,7 +41,7 @@ function filterExchanges() {
                 process.env.QUERY as string
             );
             resolve(
-                result.map(({ blockchain, exchangeName }) => {
+                result.map(({ blockchain, exchangeName, table }) => {
                     return {
                         blockchain,
                         exchangeName,
@@ -50,6 +51,7 @@ function filterExchanges() {
                         rpcBlockBatchSize: parseInt(
                             process.env.RPC_BLOCK_BATCH_SIZE as string
                         ),
+                        table,
                     };
                 })
             );
